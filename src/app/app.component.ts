@@ -9,10 +9,11 @@ import { DUMMY_USERS } from '../dummy-users';
 })
 export class AppComponent {
   title = 'Members';
-  users= DUMMY_USERS;
-
-  onSelectUser(id:string)
-  {
-console.log("selected user :"+ id);
+  users = DUMMY_USERS;
+  name: string = '';
+  onSelectUser(id: string) {
+    let user = DUMMY_USERS.find(x => x.id == id);
+    this.name = user?.name!;
+    console.log("selected user :" + id);
   }
 }
