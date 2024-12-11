@@ -11,9 +11,12 @@ export class AppComponent {
   title = 'Members';
   users = DUMMY_USERS;
   name: string = '';
+  selectedUserId :string ='u1' ;
+  get selectedUser() {
+    return this.users.find(x=>x.id === this.selectedUserId)!;
+  }
   onSelectUser(id: string) {
-    let user = DUMMY_USERS.find(x => x.id == id);
-    this.name = user?.name!;
+    this.selectedUserId = id;
     console.log("selected user :" + id);
   }
 }
