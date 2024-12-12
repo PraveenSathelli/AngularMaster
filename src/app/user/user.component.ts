@@ -16,6 +16,7 @@ interface User
 
 @Component({
   selector: 'app-user',
+  standalone:true,
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
@@ -29,7 +30,7 @@ export class UserComponent {
   @Output() select = new EventEmitter<string>();
 
   get imagePath() {
-    return 'assets/users/' + this.user.avatar;
+    return '../users/' + this.user.avatar;
   }
 
   onSelectUser() {
