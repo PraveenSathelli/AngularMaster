@@ -30,7 +30,7 @@ export class UserComponent {
   @Output() select = new EventEmitter<string>();
 
   get imagePath() {
-    return '../users/' + this.user.avatar;
+    return 'users/' + this.user.avatar;
   }
 
   onSelectUser() {
