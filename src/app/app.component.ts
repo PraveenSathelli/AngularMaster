@@ -15,9 +15,9 @@ export class AppComponent {
   title = 'Members';
   users = DUMMY_USERS;
   name: string = '';
-  selectedUserId :string ='u1' ;
+  selectedUserId! :string ;
   get selectedUser() {
-    return this.users.find(x=>x.id === this.selectedUserId)!;
+    return this.users.find(x=>x.id === this.selectedUserId);
   }
   onSelectUser(id: string) {
     this.selectedUserId = id;
