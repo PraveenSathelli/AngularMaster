@@ -4,14 +4,14 @@ import { TaskComponent } from './task/task.component';
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
-  standalone:true,
+  standalone: true,
   styleUrls: ['./tasks.component.css'],
-  imports:[TaskComponent]
+  imports: [TaskComponent]
 })
 export class TasksComponent {
 
-  @Input({required:true}) userId!: string;
-  @Input({required:true}) name!: string;
+  @Input({ required: true }) userId!: string;
+  @Input({ required: true }) name!: string;
 
   tasks = [{
     id: 't1',
@@ -37,7 +37,11 @@ export class TasksComponent {
     dueDate: '2024-06-15',
   }]
 
-  get selectedUsersTasks(){
-    return this.tasks.filter(task=>task.userId==this.userId);
+  get selectedUsersTasks() {
+    return this.tasks.filter(task => task.userId == this.userId);
+  }
+
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter(task => task.id !== id);
   }
 }
