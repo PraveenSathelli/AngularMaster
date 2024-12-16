@@ -37,8 +37,4 @@ export class TasksComponent {
     this.isAddingTask = false;
   }
 
-  onSubmitted(task: Task) {
-    this.taskService.addTask(task, this.userId);
-    this.isAddingTask = false;
-  }
 } 
