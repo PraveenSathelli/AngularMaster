@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, signal } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -12,8 +12,8 @@ export class NewTaskComponent {
 
   @Output() cancel = new EventEmitter<void>();
 
-  enteredTitle =signal('');
-  enteredSummary = signal('');
+  enteredTitle ='';
+  enteredSummary ='';
   enteredDate ='';
 
   cancledClick() {
