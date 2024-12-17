@@ -18,16 +18,13 @@ export class TasksComponent {
   isAddingTask = false;
 
   constructor(private taskService: TasksService) {
-
+    
   }
 
   get selectedUsersTasks() {
     return this.taskService.getUserTasks(this.userId);
   }
 
-  onCompleteTask(id: string) {
-    this.taskService.removeTask(id);
-  }
 
   onStartaddTask() {
     this.isAddingTask = true;
