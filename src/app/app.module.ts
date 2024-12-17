@@ -9,14 +9,16 @@ import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { UserComponent } from './user/user.component';
 import {BrowserModule} from '@angular/platform-browser'
+import { SharedModule } from './shared/card/shared.module';
+import { TaskModule } from './tasks/task.module';
 
 @NgModule({
-  declarations: [AppComponent,HeaderComponent,TasksComponent,UserComponent, CardComponent,TaskComponent,NewTaskComponent],
+  declarations: [AppComponent,HeaderComponent,UserComponent],
   imports: [
     BrowserModule,
     CommonModule,
-    FormsModule,
-    DatePipe
+    SharedModule,
+    TaskModule
   ],
   bootstrap:[AppComponent]
 })
